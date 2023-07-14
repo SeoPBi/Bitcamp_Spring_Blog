@@ -37,7 +37,7 @@ public class BlogController {
     // 3. .jsp 에서 볼 수 있도록 출력해주세요.
     // 해당 파일의 이름은 board/list.jsp 입니다
 
-    // PathVariable에서 null처리를 할 경우는 아래와 같이 경로패턴변수가 포함된 경로아 없는 경로 두개를 묶어줍니다.
+    // PathVariable에서 null처리를 할 경우는 아래와 같이 경로패턴변수가 포함된 경로가 없는 경로 두개를 묶어줍니다.
     @RequestMapping({"/list/{pageNum}", "/list"})
     public String list(Model model, @PathVariable(required = false) Integer pageNum){
         Page<Blog> pageInfo = blogService.findAll(pageNum);
