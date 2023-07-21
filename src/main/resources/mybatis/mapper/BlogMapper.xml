@@ -46,9 +46,9 @@
     <!-- delete 태그를 이용해서 deleteById 메서드를 구현해주세요 -->
     <delete id="deleteById" parameterType="long">
         DELETE FROM
-                blog
-            WHERE
-                blog_id = #{blogId}
+            blog
+        WHERE
+            blog_id = #{blogId}
     </delete>
 
     <!-- 수정로직을 아래에 쿼리문까지 작성해주세요,
@@ -68,14 +68,14 @@
     <!-- 테스트를 위한 쿼리문들 -->
     <update id="createBlogTable">
         CREATE TABLE IF NOT EXISTS blog(
-            blog_id int auto_increment primary key,
-            writer varchar(16) not null,
+                                           blog_id int auto_increment primary key,
+                                           writer varchar(16) not null,
             blog_title varchar(200) not null,
             blog_content varchar(4000) not null,
             published_at datetime default now(),
             updated_at datetime default now(),
             blog_count int default 0
-        )
+            )
     </update>
     <update id="dropBlogTable">
         DROP TABLE blog
@@ -83,9 +83,9 @@
 
     <insert id="insertTestData">
         INSERT INTO blog VALUES
-        (null, '1번유저', '1번제목', '1번본문', now(), now(), null),
-        (null, '2번유저', '2번제목', '2번본문', now(), now(), null),
-        (null, '3번유저', '3번제목', '3번본문', now(), now(), null)
+                             (null, '1번유저', '1번제목', '1번본문', now(), now(), null),
+                             (null, '2번유저', '2번제목', '2번본문', now(), now(), null),
+                             (null, '3번유저', '3번제목', '3번본문', now(), now(), null)
     </insert>
 
     <update id="check" parameterType="Long">
@@ -97,4 +97,3 @@
             blog_id = #{blogId}
     </update>
 </mapper>
-

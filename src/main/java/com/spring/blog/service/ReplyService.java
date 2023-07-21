@@ -23,6 +23,4 @@ public interface ReplyService {
 
     // update 용도로 정의한 DTO를 넘겨서 update() 메서드 정의
     void update(Reply reply);
-
-
 }

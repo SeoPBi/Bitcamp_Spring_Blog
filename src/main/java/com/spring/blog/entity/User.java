@@ -15,7 +15,7 @@ import java.util.List;
 
 @Entity
 @Getter
-@Setter // 엔터티를 DTO처럼 쓰는 행위는 좋지 못합니다.
+@Setter // 엔터티를 DTO처럼 쓰는 행위는 좋지 못합니다.(추후 리팩토링하여 세터 없앨 예정)
 @NoArgsConstructor
 @Table(name = "users") // 만약 클래스명과 테이블명이 다르게 매칭되기를 원하면 사용하는 어노테이션, USER는 MySQL의 예약어.
 public class User implements UserDetails { // UserDetails의 구현체만 스프링 시큐리티에서 인증정보로 사용할 수 있음.
